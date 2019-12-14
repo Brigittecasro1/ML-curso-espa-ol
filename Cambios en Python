@@ -20,3 +20,10 @@ imputer = SimpleImputer(strategy="mean")
 imputer = imputer.fit(X[:, 1:3])
 # Cambiar valores por dichas nedias
 X[:, 1:3] = imputer.transform(X[:, 1:3])
+
+
+#Cambios de validación cruzada y training/testing
+#La función sklearn.grid_search ha cambiado y ya no depende de ese paquete. Ahora debe cargarse con
+#from sklearn.model_selection import GridSearchCV
+#La función train_test_split ya no forma parte de sklearn.cross_validation, 
+#ahora debe cargarse desde el paquete sklearn.model_selection
