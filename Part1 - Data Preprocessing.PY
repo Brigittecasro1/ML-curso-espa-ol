@@ -32,3 +32,13 @@ X = onehotencoder.fit_transform(X)
 
 le_y = preprocessing.LabelEncoder()
 y = le_y.fit_transform(y)
+
+#Dividir el Data set en conjuntos de training y test
+from sklearn.model_selection import train_test_split as tts
+X_train, X_test, y_train, y_test = tts(X, y, test_size = 0.2, random_state = 0)
+
+# Escalado de variables
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
